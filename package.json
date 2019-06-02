@@ -1,0 +1,34 @@
+{
+  "name": "anime_jisho",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-http": "^1.5.12",
+    "apollo-utilities": "^1.2.1",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "react": "16.8.3",
+    "react-apollo": "^2.5.2",
+    "react-native": "0.59.8",
+    "react-navigation": "^2.2.0",
+    "styled-components": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.5",
+    "@babel/runtime": "7.4.5",
+    "babel-jest": "24.8.0",
+    "jest": "24.8.0",
+    "metro-react-native-babel-preset": "0.54.1",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
