@@ -14,6 +14,7 @@
     "apollo-utilities": "^1.2.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
+    "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-apollo": "^2.5.2",
     "react-native": "0.59.8",

@@ -1,18 +1,58 @@
 import React, { Component } from 'react';
-import { compose, graphql } from 'react-apollo';
-import  AllChallenges  from '../../grahql/index';
+import { graphql, compose } from 'react-apollo';
 
-import { Text, View } from 'react-native'
+import { popularAnime, highlyAnticipated, highestRated, allTimePopular } from '../../grahql/quries.js';
+
+import MainScreenView from '../../components/MainScreen';
 
 class MainScreen extends Component {
+  static navigationOptions = () => ({
+    header: null,
+  });
   render() {
-    console.log(this.props)
-    return (
-      <View>
-        <Text> Anime Jisho </Text>
-      </View>
-    )
+    const { popularAnime, highlyAnticipated, highestRated, allTimePopular } = this.props;
+    return (<MainScreenView
+      popularAnime={popularAnime}
+      highlyAnticipated={highlyAnticipated}
+      highestRated={highestRated}
+      allTimePopular={allTimePopular} />)
   }
 }
 
-export default  graphql(AllChallenges)(MainScreen);
+export default compose(graphql(popularAnime, {
+  name: 'popularAnime',
+  options: () => ({
+    variables: {
+      page: 1,
+      perPage: 6,
+    },
+  })
+}),
+  graphql(highlyAnticipated, {
+    name: 'highlyAnticipated',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 6,
+      },
+    })
+  }),
+  graphql(allTimePopular, {
+    name: 'allTimePopular',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 6,
+      },
+    })
+  }),
+  graphql(highestRated, {
+    name: 'highestRated',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 6,
+      },
+    })
+  })
+)(MainScreen);

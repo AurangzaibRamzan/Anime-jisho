@@ -7,11 +7,14 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
-import AppScreen from './src/containers/app/Navigator';
+import AppScreen from './src/containers/app/MainTabNavigator';
 
 const theme = {
-  colors: {
+  color: {
+    pirmary: '#004f4f',
+    secondary: '#ff8f1f',
   },
+  fontSize: 13,
 };
 
 export default class App extends Component {
@@ -27,7 +30,7 @@ export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={this.client}>
-        <StatusBar backgroundColor="red" />
+        <StatusBar backgroundColor="#004f4f" />
         <ThemeProvider theme={theme}>
           <AppScreen />
         </ThemeProvider>
