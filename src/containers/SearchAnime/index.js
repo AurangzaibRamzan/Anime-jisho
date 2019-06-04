@@ -1,15 +1,26 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
 
-export default class index extends Component {
+import SearchAnimeView from '../../components/SearchAnime';
+import { SearchAnimeQuery } from '../../grahql/quries.js';
+
+class SearchAnime extends Component {
   static navigationOptions = () => ({
     header: null,
   });
   render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    )
+    const { SearchAnimeQuery } = this.props;
+    return <SearchAnimeView SearchAnimeQuery={SearchAnimeQuery} />
   }
 }
+
+export default graphql(SearchAnimeQuery, {
+  name: 'SearchAnimeQuery',
+  options: () => ({
+    variables: {
+      page: 1,
+      perPage: 6,
+      search: 'a',
+    },
+  })
+})(SearchAnime);

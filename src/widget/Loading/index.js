@@ -7,9 +7,9 @@ import {
 
 export default class ActivityIndicatorNative extends Component {
   render() {
-    const { ...restProps } = this.props;
+    const { style,...restProps } = this.props;
     return (
-      <ActivityIndicator  {...restProps} />
+      <ActivityIndicator style={style}  {...restProps} />
     )
   }
 }
@@ -17,7 +17,6 @@ export default class ActivityIndicatorNative extends Component {
 ActivityIndicatorNative.defaultProps = {
   color: "#0000ff",
   size: 'small',
-  backgroundColor: 'transparent',
 };
 
 ActivityIndicatorNative.propsTypes = {
