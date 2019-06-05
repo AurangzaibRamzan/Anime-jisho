@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { get } from 'lodash';
 
-import SearchBar from './SearchBar';
-import FlatList from '../../widget/FlatList';
 import Image from '../../widget/Image';
+import Icon from '../../widget/Icon';
+import FlatList from '../../widget/FlatList';
+import { CoverLabel, LabelText } from './styles';
 
-import { CoverLabel } from './styles';
-
-export default class index extends Component {
+export default class AnimeList extends Component {
   renderItem = ({ item, index }) => {
     const { navigation } = this.props;
     const cover = get(item, 'coverImage.medium', 'https://data.whicdn.com/images/153106009/large.jpg');
@@ -34,21 +33,17 @@ export default class index extends Component {
 
     </TouchableOpacity>
   }
-  handleInputChange = (text) => {
-    this.props.SearchAnimeQuery.refetch(
-      ({
-        search: text === '' ? 'a' : text,
-      }),
-    );
-  }
 
   render() {
-    const { SearchAnimeQuery } = this.props;
+    const { popularAnime, title, navigation } = this.props;
     return (
       <View style={{ backgroundColor: '#004f4f' }} >
-        <SearchBar handleInputChange={this.handleInputChange} title="Search Anime" />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon style={{ marginLeft: 20, marginTop: 20, marginBottom: 20 }} color="#fff" name="left-arrow" size={30} />
+        </TouchableOpacity>
+        <LabelText>{title || "Anime List"}</LabelText>
         <FlatList
-          data={SearchAnimeQuery}
+          data={popularAnime}
           renderItem={this.renderItem}
         />
       </View>

@@ -8,9 +8,10 @@ class SearchCharactor extends Component {
     header: null,
   });
   render() {
-    const { SearchCharactorQuery } = this.props;
+    const { SearchCharactorQuery, navigation } = this.props;
     return <SearchCharactorView
-      SearchCharactorQuery={SearchCharactorQuery} />
+      SearchCharactorQuery={SearchCharactorQuery}
+      navigation={navigation} />
   }
 }
 

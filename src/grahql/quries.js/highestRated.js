@@ -9,12 +9,20 @@ query($perPage: Int, $page : Int){
         english
         native
       }
+      
       coverImage {
         medium
       }
+      startDate{
+        day
+        year
+        month
+      }
       format
+      season
+      
+      averageScore
       episodes
-
     }
   }
 }

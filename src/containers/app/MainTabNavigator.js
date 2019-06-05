@@ -4,7 +4,7 @@ import {
   createStackNavigator,
 } from 'react-navigation';
 
-import MainScreen from '../MainScreen';
+import MainScreen from '../../containers/MainScreen';
 import SearchAnime from '../SearchAnime';
 import SearchCharactor from '../SearchCharactor';
 import TabIcons from './TabIcons';

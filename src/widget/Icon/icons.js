@@ -23,7 +23,11 @@ function findIconSrc(name) {
     case 'wifi':
       iconSrc = require('../../../asserts/images/wifi.png');
       break;
+    case 'left-arrow':
+      iconSrc = require('../../../asserts/images/left-arrow.png');
+      break;
 
+      
     default:
       iconSrc = null;
       break;

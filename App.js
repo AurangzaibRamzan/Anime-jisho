@@ -7,7 +7,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloProvider } from 'react-apollo';
 
-import AppScreen from './src/containers/app/MainTabNavigator';
+import AppScreen from './src/containers/app/Navigator';
 
 const theme = {
   color: {

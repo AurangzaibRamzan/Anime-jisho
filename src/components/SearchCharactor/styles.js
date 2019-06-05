@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import Text from '../../widget/Text';
 
-export const MainWrapperView = styled.View`
+export const MainWrapperView = styled.TouchableOpacity`
   backgroundColor: #004f4f;
   flexDirection: row;
   paddingHorizontal: 15;

@@ -10,12 +10,13 @@ class MainScreen extends Component {
     header: null,
   });
   render() {
-    const { popularAnime, highlyAnticipated, highestRated, allTimePopular } = this.props;
+    const { popularAnime, highlyAnticipated, highestRated, allTimePopular,navigation } = this.props;
     return (<MainScreenView
       popularAnime={popularAnime}
       highlyAnticipated={highlyAnticipated}
       highestRated={highestRated}
-      allTimePopular={allTimePopular} />)
+      allTimePopular={allTimePopular}
+      navigation={navigation} />)
   }
 }
 

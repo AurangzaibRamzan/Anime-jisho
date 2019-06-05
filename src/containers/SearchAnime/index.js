@@ -9,8 +9,8 @@ class SearchAnime extends Component {
     header: null,
   });
   render() {
-    const { SearchAnimeQuery } = this.props;
-    return <SearchAnimeView SearchAnimeQuery={SearchAnimeQuery} />
+    const { SearchAnimeQuery, navigation } = this.props;
+    return <SearchAnimeView SearchAnimeQuery={SearchAnimeQuery} navigation={navigation} />
   }
 }
 

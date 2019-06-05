@@ -4,6 +4,7 @@ export const SearchCharactor = gql`
 query($perPage: Int, $page : Int,$search : String){
   Page(perPage: $perPage, page: $page) {
     characters(sort:FAVOURITES_DESC,search:$search) {
+      id
       name {
         first
         last
