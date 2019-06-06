@@ -16,7 +16,7 @@ export default class Character extends Component {
     const nameNative = get(CharacterDetails, 'Character.name.native', '');
     return (
       <MainScreenView>
-        <BackgroundImage imageStyle={{ opacity: 0.1 }} source={CharacterImage ? { uri: CharacterImage } : require('../../../asserts/images/logo.png')} >
+        <BackgroundImage imageStyle={{ opacity: 0.1 }} source={CharacterImage ? { uri: CharacterImage } : require('../../../assets/images/logo.png')} >
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon style={{ marginLeft: 20, marginTop: 5 }} color="#fff" name="left-arrow" size={30} />
           </TouchableOpacity>

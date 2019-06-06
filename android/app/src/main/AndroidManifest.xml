@@ -8,6 +8,7 @@
       android:label="Anime Jisho"
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_center"
+        android:largeHeap="true"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
       <activity

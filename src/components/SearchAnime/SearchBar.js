@@ -32,7 +32,7 @@ export default class SearchAnime extends Component {
     const { value } = this.state;
     return (
       <MainScreenView>
-        <BackgroundImage imageStyle={{ opacity: 0.1 }} source={require('../../../asserts/images/logo.png')} >
+        <BackgroundImage imageStyle={{ opacity: 0.1 }} source={require('../../../assets/images/logo.png')} >
           <LabelText>{title || 'Search Anime'}</LabelText>
           <SearchBarWrapper>
             <TextInputWrapper

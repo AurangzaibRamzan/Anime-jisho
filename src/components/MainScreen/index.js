@@ -8,7 +8,7 @@ export default class MainScreen extends Component {
     const { popularAnime, highlyAnticipated, highestRated, allTimePopular, navigation } = this.props;
     return (
       <MainScreenView>
-        <BackgroundImage imageStyle={{ opacity: 0.1 }} source={require('../../../asserts/images/logo.png')} >
+        <BackgroundImage imageStyle={{ opacity: 0.1 }} source={require('../../../assets/images/logo.png')} >
           <LabelText> Anime Jisho </LabelText>
           <DiscoverLabel onPress={()=>navigation.navigate('PopularAnime')}> Popular Anime >>> </DiscoverLabel>
           <AnimeSlider AnimeObj={popularAnime} navigation={navigation} />
