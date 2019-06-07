@@ -37,7 +37,7 @@ export default class AnimeList extends Component {
   render() {
     const { popularAnime, title, navigation } = this.props;
     return (
-      <View style={{ backgroundColor: '#004f4f' }} >
+      <View style={{flex:1,backgroundColor: '#004f4f' }} >
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon style={{ marginLeft: 20, marginTop: 20, marginBottom: 20 }} color="#fff" name="left-arrow" size={30} />
         </TouchableOpacity>

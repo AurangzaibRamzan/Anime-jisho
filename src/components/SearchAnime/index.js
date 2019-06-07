@@ -45,7 +45,7 @@ export default class index extends Component {
   render() {
     const { SearchAnimeQuery } = this.props;
     return (
-      <View style={{ backgroundColor: '#004f4f' }} >
+      <View style={{ backgroundColor: '#004f4f',flex:1 }} >
         <SearchBar handleInputChange={this.handleInputChange} title="Search Anime" />
         <FlatList
           data={SearchAnimeQuery}

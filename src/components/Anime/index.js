@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { get, isEmpty } from 'lodash';
-import { View, FlatList, TouchableOpacity } from 'react-native';
+import { View, FlatList, RefreshControl, TouchableOpacity } from 'react-native';
 
 import Image from '../../widget/Image';
 import Loading from '../../widget/Loading';
 import Icon from '../../widget/Icon';
+import NetWorkError from '../../widget/NetworkError';
 import {
   MainScreenView,
   BackgroundImage,
@@ -14,6 +15,7 @@ import {
 } from './styles';
 
 export default class Anime extends Component {
+  refetchDataList = () => this.props.AnimeDetails.refetch();
 
   renderCharacter = ({ item, index }) => {
     const { navigation } = this.props;
@@ -30,7 +32,17 @@ export default class Anime extends Component {
 
   render() {
     const { AnimeDetails, navigation } = this.props;
-    if (AnimeDetails.loading || isEmpty(AnimeDetails)) return <Loading style={{ flex: 1, backgroundColor: '#004f4f' }} />;
+    if (AnimeDetails.networkStatus === 8)
+      return <MainScreenView
+        refreshControl={
+          <RefreshControl
+            refreshing={AnimeDetails.networkStatus === 4}
+            onRefresh={this.refetchDataList}
+          />
+        }
+      > <NetWorkError /></MainScreenView>
+
+    if (AnimeDetails.loading ) return <Loading style={{ flex: 1, backgroundColor: '#004f4f' }} />;
     const cover = get(AnimeDetails, 'Media.coverImage.large', 'https://data.whicdn.com/images/153106009/large.jpg');
     const bannerImage = get(AnimeDetails, 'Media.bannerImage', 'https://data.whicdn.com/images/153106009/large.jpg');
     const titleEng = get(AnimeDetails, 'Media.title.english', '');
@@ -44,14 +56,21 @@ export default class Anime extends Component {
     const Characters = get(AnimeDetails, 'Media.characters.nodes', []).slice(0, 15);
     const genres = get(AnimeDetails, 'Media.genres', []).slice(0, 10);
     return (
-      <MainScreenView>
+      <MainScreenView
+        refreshControl={
+          <RefreshControl
+            refreshing={AnimeDetails.networkStatus === 4}
+            onRefresh={this.refetchDataList}
+          />
+        }
+      >
         <BackgroundImage imageStyle={{ opacity: 0.1 }} source={{ uri: bannerImage }} >
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon style={{ marginLeft: 0, marginTop: 5 }} color="#fff" name="left-arrow" size={30} />
           </TouchableOpacity>
           <View style={{ flexDirection: 'row', paddingTop: 20 }}>
             <Image source={{ uri: cover }} width={140} height={200} />
-            <View style={{ flexDirection: 'column',width: '60%' }}>
+            <View style={{ flexDirection: 'column', width: '60%' }}>
               {titleEng && <DecriptionLabel>{titleEng}</DecriptionLabel>}
               {titleNative && <DecriptionLabel>{titleNative}</DecriptionLabel>}
               {episodes && <CoverLabel>{`Episodes: ${episodes}`}</CoverLabel>}

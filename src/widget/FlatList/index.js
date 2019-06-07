@@ -84,7 +84,7 @@ class AppFlatList extends React.Component {
         initialNumToRender={6}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        onEndReachedThreshold={0.1}
+        onEndReachedThreshold={0.5}
         onEndReached={this.loadMore}
         contentContainerStyle={emptyData && { justifyContent: 'center', alignItems: 'center', height: '100%' }}
         ListEmptyComponent={networkError ? <NoItemFound /> : <EmptyList />}

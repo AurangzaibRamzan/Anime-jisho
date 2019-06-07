@@ -34,6 +34,11 @@ export const DiscoverLabel = styled(Text).attrs({
   color: #D8D8D8;
   font-style: italic;
 `;
+export const ClickableLabel = styled(Text).attrs({
+  fontSize: 16,
+})`
+  color: #265FBC;
+`;
 
 export const CoverLabel = styled(Text).attrs({
   fontWeight: 'normal',
