@@ -14,8 +14,6 @@ function createNavigatiorItem(screen, screenName) {
     [screenName]: { screen },
   });
 }
-
-
 export default createBottomTabNavigator(
   {
     Home: createStackNavigator({
@@ -26,7 +24,7 @@ export default createBottomTabNavigator(
   },
   {
     navigationOptions: ({ navigation }) => ({
-        tabBarIcon: ({ tintColor }) => {// eslint-disable-line
+      tabBarIcon: ({ tintColor }) => {// eslint-disable-line
 
         const { routeName } = navigation.state;
         let iconName;

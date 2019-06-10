@@ -17,11 +17,11 @@ const AppNavigator = createStackNavigator({
 
   },
   Anime,
-  Character: Character,
-  PopularAnime: PopularAnime,
-  HighlyAnticipated: HighlyAnticipated,
-  HighestRated: HighestRated,
-  AllTimePopular: AllTimePopular,
+  Character,
+  PopularAnime,
+  HighlyAnticipated,
+  HighestRated,
+  AllTimePopular,
 }, {
     initialRouteName: 'MainScreen',
   });
