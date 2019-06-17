@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 
 import Text from '../../widget/Text';
 import ActivityIndicator from '../../widget/Loading';
@@ -58,6 +59,10 @@ export const CoverTouchable = styled.TouchableOpacity`
    marginRight: 10;
 `;
 
-export const LoadingPage =styled(ActivityIndicator)`
+export const LoadingPage = styled(ActivityIndicator)`
   height: 205; 
+`;
+
+export const FlatListWrapper = styled(FlatList)`
+  paddingLeft: 20;
 `;
