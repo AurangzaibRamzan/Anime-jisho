@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { IconWrapper, IconView, TextWrapper } from './styles';
 
 export default class TabIcons extends Component {
@@ -9,9 +9,13 @@ export default class TabIcons extends Component {
     return (
       <IconWrapper>
         <IconView color={tintColor} size={TextShow ? 30 : 19} name={iconName} />
-        {TextShow && <TextWrapper textColor={tintColor} >Search Anime</TextWrapper>}
+        {TextShow && <TextWrapper textColor={tintColor} >{'Search Anime'}</TextWrapper>}
       </IconWrapper>
     );
-    return null
   }
 }
+
+TabIcons.prototypes = {
+  iconName: PropTypes.string,
+  tintColor: PropTypes.string,
+};

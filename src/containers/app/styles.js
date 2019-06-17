@@ -4,11 +4,11 @@ import Icon from '../../widget/Icon';
 import Text from '../../widget/Text';
 
 export const IconWrapper = styled.View`
-  borderColor: #004f4f;
-  borderWidth: 3;
-  backgroundColor: #ff8f1f;
+  border-Color: #004f4f;
+  border-Width: 3;
+  background-Color: #ff8f1f;
   paddingHorizontal: 20;
-  borderRadius: 40;
+  border-Radius: 40;
   paddingVertical: 20;
 `;
 
@@ -21,5 +21,5 @@ export const TextWrapper = styled(Text).attrs({
 })`
   line-height: 15;
   color: ${props => props.textColor || '#fff'};
-  marginBottom: 6;
+  margin-Bottom: 6;
 `;

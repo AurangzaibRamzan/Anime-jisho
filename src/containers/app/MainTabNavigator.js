@@ -4,7 +4,7 @@ import {
   createStackNavigator,
 } from 'react-navigation';
 
-import MainScreen from '../../containers/MainScreen';
+import MainScreen from '../MainScreen';
 import SearchAnime from '../SearchAnime';
 import SearchCharactor from '../SearchCharactor';
 import TabIcons from './TabIcons';
@@ -46,7 +46,7 @@ export default createBottomTabNavigator(
         backgroundColor: '#004f4d',
       },
       indicatorStyle: {
-        color: 'red'
+        color: 'red',
       },
     },
   },

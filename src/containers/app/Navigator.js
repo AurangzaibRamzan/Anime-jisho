@@ -4,10 +4,10 @@ import { createStackNavigator } from 'react-navigation';
 import MainScreen from './MainTabNavigator';
 import Character from '../Character';
 import Anime from '../Anime';
-import PopularAnime from '../../containers/PopularAnime';
-import HighlyAnticipated from '../../containers/HighlyAnticiptingAnime';
-import HighestRated from '../../containers/HighestRatedAnime';
-import AllTimePopular from '../../containers/AllTimePopularAnime';
+import PopularAnime from '../PopularAnime';
+import HighlyAnticipated from '../HighlyAnticiptingAnime';
+import HighestRated from '../HighestRatedAnime';
+import AllTimePopular from '../AllTimePopularAnime';
 
 const AppNavigator = createStackNavigator({
   MainScreen: {
@@ -23,8 +23,9 @@ const AppNavigator = createStackNavigator({
   HighlyAnticipated,
   HighestRated,
   AllTimePopular,
-}, {
-    initialRouteName: 'MainScreen',
-  });
+},
+{
+  initialRouteName: 'MainScreen',
+});
 
 export default AppNavigator;
