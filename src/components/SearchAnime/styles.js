@@ -1,23 +1,25 @@
 import styled from 'styled-components/native';
+
+import Icon from '../../widget/Icon';
 import Text from '../../widget/Text';
 
 export const MainScreenView = styled.ScrollView`
   background-color : ${props => props.theme.color.pirmary};
   paddingVertical: 10;
-  paddingBottom: 40;
+  padding-Bottom: 40;
 `;
 
 export const AnimeTouchble = styled.TouchableOpacity`
-  backgroundColor: #004f4f;
-  flexDirection: row;
+  background-Color: #004f4f;
+  flex-Direction: row;
   paddingHorizontal: 20; 
   paddingVertical: 5; 
-  borderBottomColor: #ff8f1f;
-  borderBottomWidth: 0.5;
+  border-Bottom-Color: #ff8f1f;
+  border-Bottom-Width: 0.5;
 `;
 
 export const MainWrapper = styled.View`
-  backgroundColor: #004f4f;
+  background-Color: #004f4f;
   flex:1;
 `;
 
@@ -48,36 +50,45 @@ export const CoverLabel = styled(Text).attrs({
 
 
 export const SearchBarWrapper = styled.View`
-  flexDirection: row;
+  flex-Direction: row;
   justify-content: space-between;
   paddingHorizontal: 5;
   paddingVertical: 5;
-  backgroundColor: #000;
+  background-Color: #000;
   marginHorizontal: 20;
-  borderRadius: 30;
-  marginTop: 20; 
+  border-Radius: 30;
+  margin-Top: 20; 
 `;
 
 export const TextInputWrapper = styled.TextInput`
   color: #fff;
-  marginLeft: 10;
-  borderBottomColor: #ff8f1f;
-  borderBottomWidth: 1;
+  margin-Left: 10;
+  border-Bottom-Color: #ff8f1f;
+  border-Bottom-Width: 1;
   padding: 0;
-  fontSize: 13;
+  font-Size: 13;
   width: 75%;
 `;
 
 export const ButtonIcon = styled.TouchableOpacity`
   justify-content: center;
-  flexDirection: row;
-  backgroundColor: #ff8f1f;
+  flex-Direction: row;
+  background-Color: #ff8f1f;
   paddingVertical: 7;
   paddingHorizontal: 10;
-  borderRadius: 20;
+  border-Radius: 20;
 `;
 
 export const ButtonText = styled(Text)`
   color: #fff; 
-  textAlign: center;
+  text-Align: center;
+`;
+
+export const LabelWrapper = styled.View`
+  flex-direction:column;
+`;
+
+export const IconWrapper = styled(Icon)`
+  align-Self: center;
+  margin-Left: 5;
 `;

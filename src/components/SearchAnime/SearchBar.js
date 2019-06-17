@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { debounce } from 'lodash';
 
-import Icon from '../../widget/Icon';
 import {
   MainScreenView,
   BackgroundImage,
@@ -10,12 +11,14 @@ import {
   TextInputWrapper,
   ButtonIcon,
   ButtonText,
+  IconWrapper,
 } from './styles';
 
 export default class SearchAnime extends Component {
   state = {
     value: '',
   };
+
   handleText = (text) => {
     const { handleInputChange } = this.props;
     this.setState({
@@ -24,15 +27,19 @@ export default class SearchAnime extends Component {
     debounce(() => {
       handleInputChange(text);
     }, 500)();
-    
-    
-  }
+  };
+
+
   render() {
     const { title, handleInputChange } = this.props;
     const { value } = this.state;
+    const backgroundImageStyle = { opacity: 0.1 };
     return (
       <MainScreenView>
-        <BackgroundImage imageStyle={{ opacity: 0.1 }} source={require('../../../assets/images/logo.png')} >
+        <BackgroundImage
+          imageStyle={backgroundImageStyle}
+          source={require('../../../assets/images/logo.png')}
+        >
           <LabelText>{title || 'Search Anime'}</LabelText>
           <SearchBarWrapper>
             <TextInputWrapper
@@ -42,12 +49,21 @@ export default class SearchAnime extends Component {
               placeholderTextColor='#fff'
             />
             <ButtonIcon onPress={() => handleInputChange(value)}>
-              <ButtonText>Otaku</ButtonText>
-              <Icon name='search' color='#fff' size={10} style={{ alignSelf: 'center', marginLeft: 5 }} />
+              <ButtonText>{'Otaku'}</ButtonText>
+              <IconWrapper
+                name='search'
+                color='#fff'
+                size={10}
+              />
             </ButtonIcon>
           </SearchBarWrapper>
         </BackgroundImage>
       </MainScreenView>
-    )
+    );
   }
 }
+
+SearchAnime.prototypes = {
+  handleInputChange: PropTypes.func,
+  title: PropTypes.string,
+};
