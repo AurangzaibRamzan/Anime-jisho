@@ -1,5 +1,9 @@
 import styled from 'styled-components/native';
+import { TouchableOpacity } from 'react-native';
+
 import Text from '../../widget/Text';
+import Icon from '../../widget/Icon';
+
 
 export const MainScreenView = styled.ScrollView`
   background-color : ${props => props.theme.color.pirmary};
@@ -30,4 +34,28 @@ export const LabelText = styled(Text).attrs({
   color: #fff;
   font-style: italic;
   padding-bottom: 20;
+`;
+
+export const TouchableCover = styled(TouchableOpacity)`
+  background-Color: #004f4f;
+  flex-Direction: row;
+  paddingHorizontal: 20;
+  paddingVertical: 5; 
+  border-Bottom-Color: #ff8f1f; 
+  border-Bottom-Width: 0.5; 
+`;
+
+export const LabelWrappper = styled.View`
+  flex-Direction: column;
+`;
+
+export const MainWrapper = styled.View`
+  flex: 1; 
+  background-Color: #004f4f;
+`;
+
+export const IconWrapper = styled(Icon)`
+  margin-Left: 20;
+  margin-Top: 20;
+  margin-Bottom: 20;
 `;
