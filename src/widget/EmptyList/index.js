@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
-import Icon from '../Icon';
-import { View } from 'react-native'
+import React, { Component } from 'react';
+import { View } from 'react-native';
 
-export default class index extends Component {
+import Icon from '../Icon';
+
+export default class EmptyList extends Component {
   render() {
+    const ViewStyle = { backgroundColor: '#004f4f' };
     return (
-      <View style={{ backgroundColor: '#004f4f' }}>
+      <View style={ViewStyle}>
         <Icon name='noData' size={200} />
       </View>
-    )
+    );
   }
 }

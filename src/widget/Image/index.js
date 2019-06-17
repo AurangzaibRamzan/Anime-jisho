@@ -5,7 +5,6 @@ import { get } from 'lodash';
 import { ImageWrapper } from './styles';
 
 class Image extends React.Component {
-
   render() {
     const {
       name, source, size, height, width, ...restProps

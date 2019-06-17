@@ -63,4 +63,3 @@ query($id: Int){
 `;
 
 export default AnimeDetails;
-

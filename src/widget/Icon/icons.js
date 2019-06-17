@@ -13,7 +13,7 @@ function findIconSrc(name) {
       iconSrc = require('../../../assets/images/searchMovie.png');
       break;
     case 'SearchCharactor':
-      iconSrc = require('../../../assets/images/searchUser.png');;
+      iconSrc = require('../../../assets/images/searchUser.png');
       break;
     case 'search':
       iconSrc = require('../../../assets/images/search.png');

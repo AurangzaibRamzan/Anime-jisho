@@ -16,4 +16,4 @@ export {
   highlyAnticipated,
   highestRated,
   SearchCharactorQuery,
-}
+};

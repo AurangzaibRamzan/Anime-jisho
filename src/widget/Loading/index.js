@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  ActivityIndicator
+  ActivityIndicator,
 } from 'react-native';
 
 export default class ActivityIndicatorNative extends Component {
   render() {
-    const { style,...restProps } = this.props;
+    const { ...restProps } = this.props;
     return (
-      <ActivityIndicator style={style}  {...restProps} />
-    )
+      <ActivityIndicator {...restProps} />
+    );
   }
 }
 
 ActivityIndicatorNative.defaultProps = {
-  color: "#0000ff",
+  color: '#0000ff',
   size: 'small',
 };
 
