@@ -1,5 +1,9 @@
 import styled from 'styled-components/native';
+
+import Loading from '../../widget/Loading';
 import Text from '../../widget/Text';
+import Icon from '../../widget/Icon';
+import Image from '../../widget/Image';
 
 export const MainScreenView = styled.ScrollView`
   background-color : ${props => props.theme.color.pirmary};
@@ -31,5 +35,19 @@ export const LabelText = styled(Text).attrs({
   paddingHorizontal : 20;
   color: #fff;
   font-style: italic;
+  align-self: center;
+`;
+
+export const LoadingWrapper = styled(Loading)`
+  flex: 1; 
+  background-Color: #004f4f ;
+`;
+
+export const IconWrapper = styled(Icon)`
+  margin-Left: 20; 
+  margin-Top: 5;
+`;
+
+export const ImageWrapper = styled(Image)`
   align-self: center;
 `;
