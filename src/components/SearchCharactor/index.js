@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 import { get } from 'lodash';
 
-import Image from '../../widget/Image';
 import SearchBar from '../SearchAnime/SearchBar';
 import FlatList from './FlatList';
 
-import { MainWrapperView, TextWrapper, CoverLabel } from './styles';
+import {
+  MainWrapperView,
+  TextWrapper,
+  CoverLabel,
+  CharacterImage,
+  MainView,
+} from './styles';
 
-export default class index extends Component {
-  renderItem = ({ item, index }) => {
+export default class SearchCharacter extends Component {
+  renderItem = ({ item }) => {
     const { navigation } = this.props;
-    const name = get(item, 'name.first', '') + ` ${get(item, 'name.last', '') ? get(item, 'name.last', '') : ''}`;
+    const name = `${get(item, 'name.first', '')}  ${get(item, 'name.last', '') ? get(item, 'name.last', '') : ''}`;
     const nameNatve = get(item, 'name.native', '');
     const image = get(item, 'image.medium', 'https://i.pinimg.com/474x/11/da/6c/11da6c29f4ad4236431d0f45ac47c2c2.jpg');
-    console.log(name, nameNatve, item)
-    return <MainWrapperView onPress={() => item.id && navigation.navigate('Character', { id: item.id })}>
-      <Image source={{ uri: image }} size={70} style={{ borderRadius: 35 }} />
+    return (<MainWrapperView onPress={() => item.id && navigation.navigate('Character', { id: item.id })}>
+      <CharacterImage source={{ uri: image }} size={70} />
       <TextWrapper>
         <CoverLabel> {`${name === null ? '' : name}`}</CoverLabel>
         <CoverLabel> {`${nameNatve === null ? '' : nameNatve}`}</CoverLabel>
       </TextWrapper>
-    </MainWrapperView>
+    </MainWrapperView>);
   }
+
   handleInputChange = (text) => {
     this.props.SearchCharactorQuery.refetch(
       ({
@@ -30,10 +35,12 @@ export default class index extends Component {
       }),
     );
   }
+
+
   render() {
     const { SearchCharactorQuery } = this.props;
     return (
-      <View style={{ backgroundColor: '#004f4f', flex: 1, }}>
+      <MainView>
         <SearchBar
           title="Search Character"
           handleInputChange={this.handleInputChange} />
@@ -41,7 +48,12 @@ export default class index extends Component {
           data={SearchCharactorQuery}
           renderItem={this.renderItem}
         />
-      </View>
-    )
+      </MainView>
+    );
   }
 }
+
+SearchCharacter.prototypes = {
+  SearchCharactorQuery: PropTypes.object,
+  navigation: PropTypes.object,
+};

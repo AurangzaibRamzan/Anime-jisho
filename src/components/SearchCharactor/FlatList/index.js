@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, RefreshControl, View } from 'react-native';
+import { FlatList, RefreshControl } from 'react-native';
 import {
   get, assign, isFunction,
 } from 'lodash';
@@ -25,7 +25,7 @@ class AppFlatList extends React.Component {
 
   loadMore() {
     const { data } = this.props;
-    if ((get(data, `Page.characters`, []).length) < 6) {
+    if ((get(data, 'Page.characters', []).length) < 6) {
       this.setState({ noMoreData: true });
       return null;
     }
@@ -35,7 +35,7 @@ class AppFlatList extends React.Component {
         perPage: 6,
       },
       updateQuery: (previousResult, { fetchMoreResult }) => {
-        const newEdges = get(fetchMoreResult, `Page.characters`, []);
+        const newEdges = get(fetchMoreResult, 'Page.characters', []);
         this.setState({ page: (this.state.page + 1) });
         // Don't do anything if there weren't any new items
         if (!fetchMoreResult || newEdges.length === 0) {
@@ -45,13 +45,13 @@ class AppFlatList extends React.Component {
 
         const previousEdges = get(
           previousResult,
-          `Page.characters`,
+          'Page.characters',
           [],
         );
         const concatEdges = previousEdges.concat(newEdges);
         const dataList = assign(
           {},
-          get(previousResult, `Page`, {}),
+          get(previousResult, 'Page', {}),
           {
             characters: [...concatEdges],
           },
@@ -60,6 +60,7 @@ class AppFlatList extends React.Component {
         return { Page: dataList };
       },
     });
+    return null;
   }
 
   refetchDataList() {
@@ -73,12 +74,14 @@ class AppFlatList extends React.Component {
     } = this.props;
     const { noMoreData } = this.state;
     if (!data) return null;
-    if (!get(data, `Page.characters`) && data.loading) return (<Loading style={{ height: '80%', backgroundColor: '#004f4f' }} />);
+    const loadingStyle = { height: '80%', backgroundColor: '#004f4f' };
+    if (!get(data, 'Page.characters') && data.loading) return (<Loading style={loadingStyle} />);
 
     const networkError = data.networkStatus === 8;
 
-    const dataList = get(data, `Page.characters`,[]);
-    const emptyData = !(get(data, `Page.characters`,[]).length > 0);
+    const dataList = get(data, 'Page.characters', []);
+    const emptyData = !(get(data, 'Page.characters', []).length > 0);
+    const containerStyle = { justifyContent: 'center', alignItems: 'center', height: '100%' };
 
     return (
       <FlatList
@@ -90,7 +93,7 @@ class AppFlatList extends React.Component {
         showsVerticalScrollIndicator={false}
         onEndReachedThreshold={0.1}
         onEndReached={this.loadMore}
-        contentContainerStyle={emptyData && { justifyContent: 'center', alignItems: 'center', height: '100%' }}
+        contentContainerStyle={emptyData && containerStyle}
         ListEmptyComponent={networkError ? <NoItemFound /> : <EmptyList />}
         refreshControl={
           <RefreshControl

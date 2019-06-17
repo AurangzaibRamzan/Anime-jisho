@@ -1,17 +1,19 @@
 import styled from 'styled-components/native';
+
+import Image from '../../widget/Image';
 import Text from '../../widget/Text';
 
 export const MainWrapperView = styled.TouchableOpacity`
-  backgroundColor: #004f4f;
-  flexDirection: row;
+  background-Color: #004f4f;
+  flex-Direction: row;
   paddingHorizontal: 15;
   paddingVertical: 5;
-  borderBottomColor: #ff8f1f;
-  borderBottomWidth: 0.5;
+  border-Bottom-Color: #ff8f1f;
+  border-Bottom-Width: 0.5;
 `;
 
 export const TextWrapper = styled.View`
-  flexDirection: column;
+  flex-Direction: column;
   justify-content:center;
   align-content: center;
 `;
@@ -26,3 +28,11 @@ export const CoverLabel = styled(Text).attrs({
   color:#D8D8D8;
 `;
 
+export const CharacterImage = styled(Image)`
+  border-Radius: 35;
+`;
+
+export const MainView = styled.View`
+  background-Color: #004f4f; 
+  flex: 1;
+`;
