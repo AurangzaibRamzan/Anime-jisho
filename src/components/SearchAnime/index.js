@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 import { get } from 'lodash';
 
 import SearchBar from './SearchBar';
 import FlatList from '../../widget/FlatList';
 import Image from '../../widget/Image';
 
-import { CoverLabel } from './styles';
+import { CoverLabel, MainWrapper, AnimeTouchble } from './styles';
 
 export default class index extends Component {
   renderItem = ({ item, index }) => {
@@ -20,7 +20,7 @@ export default class index extends Component {
     const averageScore = get(item, 'averageScore', '');
     const id = get(item, 'id');
     const date = `${get(item, 'startDate.day', '')}/${get(item, 'startDate.month', '')}/${get(item, 'startDate.year', '')}`;
-    return <TouchableOpacity onPress={() => id && navigation.navigate('Anime', { id: id })} style={{ backgroundColor: '#004f4f', flexDirection: 'row', paddingHorizontal: 20, paddingVertical: 5, borderBottomColor: '#ff8f1f', borderBottomWidth: 0.5 }}>
+    return <AnimeTouchble onPress={() => id && navigation.navigate('Anime', { id: id })} >
       <Image source={{ uri: cover }} width={100} height={135} />
       <View style={{ flexDirection: 'column' }}>
         {titleEng && <CoverLabel>{titleEng}</CoverLabel>}
@@ -32,8 +32,9 @@ export default class index extends Component {
         {date && <CoverLabel>{`Starting Date: ${date}`}</CoverLabel>}
       </View>
 
-    </TouchableOpacity>
+    </AnimeTouchble>
   }
+
   handleInputChange = (text) => {
     this.props.SearchAnimeQuery.refetch(
       ({
@@ -45,13 +46,13 @@ export default class index extends Component {
   render() {
     const { SearchAnimeQuery } = this.props;
     return (
-      <View style={{ backgroundColor: '#004f4f',flex:1 }} >
+      <MainWrapper>
         <SearchBar handleInputChange={this.handleInputChange} title="Search Anime" />
         <FlatList
           data={SearchAnimeQuery}
           renderItem={this.renderItem}
         />
-      </View>
+      </MainWrapper>
     )
   }
 }

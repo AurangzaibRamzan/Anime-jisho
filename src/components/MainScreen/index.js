@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { RefreshControl } from 'react-native';
 import AnimeSlider from './AnimeSlider';
-import { MainScreenView, LabelText, BackgroundImage, DiscoverLabel,ClickableLabel } from './styles';
+import { MainScreenView, LabelText, BackgroundImage, DiscoverLabel, ClickableLabel } from './styles';
 
 export default class MainScreen extends Component {
   refetchDataList = () => {

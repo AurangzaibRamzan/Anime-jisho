@@ -1,5 +1,6 @@
 
 import { createStackNavigator } from 'react-navigation';
+
 import MainScreen from './MainTabNavigator';
 import Character from '../Character';
 import Anime from '../Anime';

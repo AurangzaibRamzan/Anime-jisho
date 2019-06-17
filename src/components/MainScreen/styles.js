@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
+
 import Text from '../../widget/Text';
+import ActivityIndicator from '../../widget/Loading';
 
 export const MainScreenView = styled.ScrollView`
   background-color : ${props => props.theme.color.pirmary};
@@ -34,6 +36,7 @@ export const DiscoverLabel = styled(Text).attrs({
   color: #D8D8D8;
   font-style: italic;
 `;
+
 export const ClickableLabel = styled(Text).attrs({
   fontSize: 16,
 })`
@@ -48,4 +51,13 @@ export const CoverLabel = styled(Text).attrs({
   padding-left: 3;
   line-height: 13;
   color:#D8D8D8;
+`;
+
+export const CoverTouchable = styled.TouchableOpacity`
+   width: 95; 
+   marginRight: 10;
+`;
+
+export const LoadingPage =styled(ActivityIndicator)`
+  height: 205; 
 `;

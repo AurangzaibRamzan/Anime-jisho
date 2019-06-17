@@ -1,5 +1,11 @@
 import styled from 'styled-components/native';
+import { TouchableOpacity, FlatList } from 'react-native';
+
+import Image from '../../widget/Image';
 import Text from '../../widget/Text';
+import Loading from '../../widget/Loading';
+import Icon from '../../widget/Icon';
+
 
 export const MainScreenView = styled.ScrollView`
   background-color : ${props => props.theme.color.pirmary};
@@ -43,4 +49,43 @@ export const Label = styled(Text).attrs({
   marginVertical: 5; 
   marginHorizontal: 5; 
   borderRadius: 8;
+`;
+
+export const ImageWrapper = styled(Image)`
+  border-Radius: 3;
+`;
+
+export const TouchableCard = styled(TouchableOpacity)`
+  width: 100; 
+  margin-Right: 20;
+`;
+
+export const LoadingWrapper = styled(Loading)`
+  flex: 1; 
+  backgroundColor: #004f4f;
+`;
+
+export const IconWrapper = styled(Icon)`
+  marginLeft: 0; 
+  marginTop: 5;
+`;
+
+
+export const ImageOuterWrapper = styled.View`
+  flexDirection: row;
+  paddingTop: 20;
+`;
+
+export const LableWrapper = styled.View`
+  flexDirection: column;
+  width: 60%;
+`;
+
+export const GenreWrapper = styled.View`
+  flexDirection: row;
+`;
+
+
+export const FlatListWrapper = styled(FlatList)`
+  marginVertical: 15;
 `;

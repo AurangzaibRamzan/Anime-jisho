@@ -7,6 +7,20 @@ export const MainScreenView = styled.ScrollView`
   paddingBottom: 40;
 `;
 
+export const AnimeTouchble = styled.TouchableOpacity`
+  backgroundColor: #004f4f;
+  flexDirection: row;
+  paddingHorizontal: 20; 
+  paddingVertical: 5; 
+  borderBottomColor: #ff8f1f;
+  borderBottomWidth: 0.5;
+`;
+
+export const MainWrapper = styled.View`
+  backgroundColor: #004f4f;
+  flex:1;
+`;
+
 export const BackgroundImage = styled.ImageBackground`
   width: 100%; 
   height: 100%;
@@ -63,8 +77,7 @@ export const ButtonIcon = styled.TouchableOpacity`
   borderRadius: 20;
 `;
 
-export const ButtonText =styled(Text)`
+export const ButtonText = styled(Text)`
   color: #fff; 
   textAlign: center;
-
 `;
