@@ -1,7 +1,16 @@
 # Anime-jisho
 <img src="https://user-images.githubusercontent.com/31761132/58764939-dd836b00-8586-11e9-99ff-24190025c5f6.png" width="100" height="100">
-Android and IOS Application for Searching Anime and its characher
+Android and IOS Application for Searching Anime and its charachers
 </br>
+
+<h2>Technologies Used </h2>
+ 
+- React Native
+- React Navigation
+- Styled Component
+- React Apollo
+- Apollo Client
+- GraphQL backened
 
 <h2>Screens </h2>
 
