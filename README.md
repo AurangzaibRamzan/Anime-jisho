@@ -26,7 +26,7 @@ Android and IOS Application for Searching Anime and its charachers
 - Apollo Client
 - GraphQL backened
 
-<h2>Screens </h2>
+<h2>Android Screens </h2>
 
 <p align="left">
 <img src="https://user-images.githubusercontent.com/31761132/59718001-98bc2d00-9232-11e9-973d-8e353c473d57.jpg" width="200" height="350">
@@ -34,4 +34,14 @@ Android and IOS Application for Searching Anime and its charachers
 <img src="https://user-images.githubusercontent.com/31761132/59718002-9954c380-9232-11e9-849e-c14b384bf9f6.jpg" width="200" height="350">
 <img src="https://user-images.githubusercontent.com/31761132/59718003-9954c380-9232-11e9-813f-8b0fd06ea5da.jpg" width="200" height="350">
 <img src="https://user-images.githubusercontent.com/31761132/59718005-99ed5a00-9232-11e9-8ea3-1dfec732d7d4.jpg" width="200" height="350">
+</p>
+
+<h2>IOS Screens </h2>
+
+<p align="left">
+<img src="https://user-images.githubusercontent.com/31761132/59953672-9eb44700-949a-11e9-83b1-c339b175a8a3.jpg" width="200" height="350">
+ <img src="https://user-images.githubusercontent.com/31761132/59953673-9eb44700-949a-11e9-8ebd-732e24379201.jpg"  width="200" height="350">
+<img src="https://user-images.githubusercontent.com/31761132/59953674-9f4cdd80-949a-11e9-8efc-84670f6c1bd7.jpg" width="200" height="350">
+<img src="https://user-images.githubusercontent.com/31761132/59953676-9f4cdd80-949a-11e9-8fe6-c2cd769105e5.jpg" width="200" height="350">
+
 </p>
