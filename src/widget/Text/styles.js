@@ -5,7 +5,6 @@ export const TextWrapper = styled.Text`
   letter-spacing: ${props => (props.letterSpacing || 0)};
   ${props => ((props.fontColor || props.color) ? { color: (props.fontColor || props.color) } : null)};
   
-  font-family: ${props => props.theme.fontFamily};
   font-style: ${() => (/* props.fontWeight || */ 'normal')};
   font-size: ${props => Normalization(props.fontSize || props.theme.fontSize)};
   font-weight: ${(props) => {

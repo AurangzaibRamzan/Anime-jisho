@@ -1,8 +1,5 @@
 # Anime-jisho
 
-<<<<<<< HEAD
-![61823347_1075333366000759_6036571273193062400_n](https://user-images.githubusercontent.com/31761132/58764939-dd836b00-8586-11e9-99ff-24190025c5f6.png){:height="200px" width="200px"}
-=======
 ![support](https://img.shields.io/badge/platform-IOS%20%7C%20Andriod-%23989898.svg)
 ![build status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![license use](https://img.shields.io/badge/license-Apache%202-blue.svg)
@@ -19,7 +16,7 @@
 <img src="https://user-images.githubusercontent.com/31761132/58764939-dd836b00-8586-11e9-99ff-24190025c5f6.png" width="100" height="100">
 Android and IOS Application for Searching Anime and its charachers
 </br>
-
+https://aurangzaibramzan.github.io/Anime-jisho/
 <h2>Technologies Used </h2>
  
 - React Native
@@ -29,7 +26,7 @@ Android and IOS Application for Searching Anime and its charachers
 - Apollo Client
 - GraphQL backened
 
-<h2>Screens </h2>
+<h2>Android Screens </h2>
 
 <p align="left">
 <img src="https://user-images.githubusercontent.com/31761132/59718001-98bc2d00-9232-11e9-973d-8e353c473d57.jpg" width="200" height="350">
@@ -38,4 +35,15 @@ Android and IOS Application for Searching Anime and its charachers
 <img src="https://user-images.githubusercontent.com/31761132/59718003-9954c380-9232-11e9-813f-8b0fd06ea5da.jpg" width="200" height="350">
 <img src="https://user-images.githubusercontent.com/31761132/59718005-99ed5a00-9232-11e9-8ea3-1dfec732d7d4.jpg" width="200" height="350">
 </p>
->>>>>>> 479a3d64b0cd70e328bffe1835847a145b7e8c5d
+
+
+<h2>IOS Screens </h2>
+
+<p align="left">
+<img src="https://user-images.githubusercontent.com/31761132/59953672-9eb44700-949a-11e9-83b1-c339b175a8a3.jpg" width="200" height="350">
+ <img src="https://user-images.githubusercontent.com/31761132/59953673-9eb44700-949a-11e9-8ebd-732e24379201.jpg"  width="200" height="350">
+<img src="https://user-images.githubusercontent.com/31761132/59953674-9f4cdd80-949a-11e9-8efc-84670f6c1bd7.jpg" width="200" height="350">
+<img src="https://user-images.githubusercontent.com/31761132/59953676-9f4cdd80-949a-11e9-8fe6-c2cd769105e5.jpg" width="200" height="350">
+
+</p>
+
