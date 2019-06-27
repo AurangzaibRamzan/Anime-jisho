@@ -14,7 +14,7 @@
 
 
 <img src="https://user-images.githubusercontent.com/31761132/58764939-dd836b00-8586-11e9-99ff-24190025c5f6.png" width="100" height="100">
-Android and IOS Application for Searching Anime and its charachers
+Android and IOS Application for Searching Anime
 </br>
 https://aurangzaibramzan.github.io/Anime-jisho/
 <h2>Technologies Used </h2>
