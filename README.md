@@ -46,4 +46,17 @@ https://aurangzaibramzan.github.io/Anime-jisho/
 <img src="https://user-images.githubusercontent.com/31761132/59953676-9f4cdd80-949a-11e9-8fe6-c2cd769105e5.jpg" width="200" height="350">
 
 </p>
+## Working with Code
+The process of submitting a pull request is fairly straightforward and generally follows the same pattern each time:
+
+#### Create a new branch
+#### Make your changes
+#### Rebase onto upstream
+#### Run the tests
+#### Double check your submission
+#### Push your changes
+#### Submit the pull request
+
+ ### Having trouble with repo? Check out our documentation or contact Support aurangzaib987@gmail.com
+
 
