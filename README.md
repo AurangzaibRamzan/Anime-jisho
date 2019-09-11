@@ -115,11 +115,11 @@ The process of submitting a pull request is fairly straightforward and generally
     ```
     ```bash
     # for lint check
-    npm lint
+    npm run lint
     ```
     ```bash
     # for lint fix
-    npm lint-fix
+    npm run lint-fix
     ```
 
 6. Commit your changes using a descriptive commit message.

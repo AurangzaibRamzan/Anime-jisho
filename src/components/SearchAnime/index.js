@@ -13,9 +13,11 @@ import {
   LabelWrapper,
 } from './styles';
 
-export default class SearchAnime extends Component {
-  renderItem = ({ item }) => {
-    const { navigation } = this.props;
+const SearchAnime = ({
+  SearchAnimeQuery,
+  navigation,
+}) => {
+  const renderItem = ({ item }) => {
     const cover = get(item, 'coverImage.medium', 'https://data.whicdn.com/images/153106009/large.jpg');
     const titleEng = get(item, 'title.english', '');
     const titleNative = get(item, 'title.native', '');
@@ -25,44 +27,44 @@ export default class SearchAnime extends Component {
     const averageScore = get(item, 'averageScore', '');
     const id = get(item, 'id');
     const date = `${get(item, 'startDate.day', '')}/${get(item, 'startDate.month', '')}/${get(item, 'startDate.year', '')}`;
-    return (<AnimeTouchble onPress={() => id && navigation.navigate('Anime', { id })} >
-      <Image source={{ uri: cover }} width={100} height={135} />
-      <LabelWrapper>
-        {titleEng && <CoverLabel>{titleEng}</CoverLabel>}
-        {titleNative && <CoverLabel>{titleNative}</CoverLabel>}
-        {episodes && <CoverLabel>{`Episodes: ${episodes}`}</CoverLabel>}
-        {averageScore && <CoverLabel>{`Score: ${averageScore}`}</CoverLabel>}
-        {format && <CoverLabel>{`Format: ${format}`}</CoverLabel>}
-        {season && <CoverLabel>{`Season: ${season}`}</CoverLabel>}
-        {date && <CoverLabel>{`Starting Date: ${date}`}</CoverLabel>}
-      </LabelWrapper>
+    return (
+      <AnimeTouchble onPress={() => id && navigation.navigate('Anime', { id })} >
+        <Image source={{ uri: cover }} width={100} height={135} />
+        <LabelWrapper>
+          {titleEng && <CoverLabel>{titleEng}</CoverLabel>}
+          {titleNative && <CoverLabel>{titleNative}</CoverLabel>}
+          {episodes && <CoverLabel>{`Episodes: ${episodes}`}</CoverLabel>}
+          {averageScore && <CoverLabel>{`Score: ${averageScore}`}</CoverLabel>}
+          {format && <CoverLabel>{`Format: ${format}`}</CoverLabel>}
+          {season && <CoverLabel>{`Season: ${season}`}</CoverLabel>}
+          {date && <CoverLabel>{`Starting Date: ${date}`}</CoverLabel>}
+        </LabelWrapper>
+      </AnimeTouchble>
+    );
+  };
 
-    </AnimeTouchble>);
-  }
-
-  handleInputChange = (text) => {
-    this.props.SearchAnimeQuery.refetch(
+  const handleInputChange = (text) => {
+    SearchAnimeQuery.refetch(
       ({
         search: text === '' ? 'a' : text,
       }),
     );
-  }
+  };
 
-  render() {
-    const { SearchAnimeQuery } = this.props;
-    return (
-      <MainWrapper>
-        <SearchBar handleInputChange={this.handleInputChange} title="Search Anime" />
-        <FlatList
-          data={SearchAnimeQuery}
-          renderItem={this.renderItem}
-        />
-      </MainWrapper>
-    );
-  }
-}
+  return (
+    <MainWrapper>
+      <SearchBar handleInputChange={handleInputChange} title="Search Anime" />
+      <FlatList
+        data={SearchAnimeQuery}
+        renderItem={renderItem}
+      />
+    </MainWrapper>
+  );
+};
 
-SearchAnime.prototypes = {
+SearchAnime.propTypes = {
   SearchAnimeQuery: PropTypes.object,
   navigation: PropTypes.object,
 };
+
+export default SearchAnime;

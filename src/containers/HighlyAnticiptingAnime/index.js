@@ -1,25 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 
 import AnimeList from '../../components/AnimeList';
 import { highlyAnticipated } from '../../grahql/quries.js';
 
-class HighlyAnticipated extends Component {
-  static navigationOptions = () => ({
-    header: null,
-  });
+const HighlyAnticipated = ({
+  highlyAnticipated,
+  navigation,
+}) => (
+  <AnimeList navigation={navigation} title="Highly Anticipated Anime" popularAnime={highlyAnticipated} />
+);
 
-  render() {
-    const {
-      highlyAnticipated,
-      navigation,
-    } = this.props;
-    return (
-      <AnimeList navigation={navigation} title="Highly Anticipated Anime" popularAnime={highlyAnticipated} />
-    );
-  }
-}
+HighlyAnticipated.navigationOptions = {
+  header: null,
+};
 
 HighlyAnticipated.propTypes = {
   highlyAnticipated: PropTypes.object,

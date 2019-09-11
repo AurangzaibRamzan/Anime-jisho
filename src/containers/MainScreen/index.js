@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
 
@@ -11,29 +11,25 @@ import {
 
 import MainScreenView from '../../components/MainScreen';
 
-class MainScreen extends Component {
-  static navigationOptions = () => ({
-    header: null,
-  });
+const MainScreen = ({
+  popularAnime,
+  highlyAnticipated,
+  highestRated,
+  allTimePopular,
+  navigation,
+}) => (
+  <MainScreenView
+    popularAnime={popularAnime}
+    highlyAnticipated={highlyAnticipated}
+    highestRated={highestRated}
+    allTimePopular={allTimePopular}
+    navigation={navigation}
+  />
+);
 
-
-  render() {
-    const {
-      popularAnime,
-      highlyAnticipated,
-      highestRated,
-      allTimePopular,
-      navigation,
-    } = this.props;
-    return (<MainScreenView
-      popularAnime={popularAnime}
-      highlyAnticipated={highlyAnticipated}
-      highestRated={highestRated}
-      allTimePopular={allTimePopular}
-      navigation={navigation} />);
-  }
-}
-
+MainScreen.navigationOptions = {
+  header: null,
+};
 
 MainScreen.propTypes = {
   popularAnime: PropTypes.object,

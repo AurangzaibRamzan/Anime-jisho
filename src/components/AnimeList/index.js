@@ -15,9 +15,12 @@ import {
   IconWrapper,
 } from './styles';
 
-export default class AnimeList extends Component {
-  renderItem = ({ item }) => {
-    const { navigation } = this.props;
+const AnimeList = ({
+  popularAnime,
+  title,
+  navigation,
+}) => {
+  const renderItem = ({ item }) => {
     const cover = get(item, 'coverImage.medium', 'https://data.whicdn.com/images/153106009/large.jpg');
     const titleEng = get(item, 'title.english', '');
     const titleNative = get(item, 'title.native', '');
@@ -27,39 +30,40 @@ export default class AnimeList extends Component {
     const averageScore = get(item, 'averageScore', '');
     const id = get(item, 'id');
     const date = `${get(item, 'startDate.day', '')}/${get(item, 'startDate.month', '')}/${get(item, 'startDate.year', '')}`;
-    return (<TouchableCover onPress={() => id && navigation.navigate('Anime', { id })} >
-      <Image source={{ uri: cover }} width={100} height={135} />
-      <LabelWrappper>
-        {titleEng && <CoverLabel>{titleEng}</CoverLabel>}
-        {titleNative && <CoverLabel>{titleNative}</CoverLabel>}
-        {episodes && <CoverLabel>{`Episodes: ${episodes}`}</CoverLabel>}
-        {averageScore && <CoverLabel>{`Score: ${averageScore}`}</CoverLabel>}
-        {format && <CoverLabel>{`Format: ${format}`}</CoverLabel>}
-        {season && <CoverLabel>{`Season: ${season}`}</CoverLabel>}
-        {date && <CoverLabel>{`Starting Date: ${date}`}</CoverLabel>}
-      </LabelWrappper>
-    </TouchableCover>);
-  }
-
-  render() {
-    const { popularAnime, title, navigation } = this.props;
     return (
-      <MainWrapper >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <IconWrapper color="#fff" name="left-arrow" size={30} />
-        </TouchableOpacity>
-        <LabelText>{title || 'Anime List'}</LabelText>
-        <FlatList
-          data={popularAnime}
-          renderItem={this.renderItem}
-        />
-      </MainWrapper>
+      <TouchableCover onPress={() => id && navigation.navigate('Anime', { id })} >
+        <Image source={{ uri: cover }} width={100} height={135} />
+        <LabelWrappper>
+          {titleEng && <CoverLabel>{titleEng}</CoverLabel>}
+          {titleNative && <CoverLabel>{titleNative}</CoverLabel>}
+          {episodes && <CoverLabel>{`Episodes: ${episodes}`}</CoverLabel>}
+          {averageScore && <CoverLabel>{`Score: ${averageScore}`}</CoverLabel>}
+          {format && <CoverLabel>{`Format: ${format}`}</CoverLabel>}
+          {season && <CoverLabel>{`Season: ${season}`}</CoverLabel>}
+          {date && <CoverLabel>{`Starting Date: ${date}`}</CoverLabel>}
+        </LabelWrappper>
+      </TouchableCover>
     );
-  }
-}
+  };
 
-AnimeList.prototypes = {
+  return (
+    <MainWrapper >
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <IconWrapper color="#fff" name="left-arrow" size={30} />
+      </TouchableOpacity>
+      <LabelText>{title || 'Anime List'}</LabelText>
+      <FlatList
+        data={popularAnime}
+        renderItem={renderItem}
+      />
+    </MainWrapper>
+  );
+};
+
+AnimeList.propTypes = {
   popularAnime: PropTypes.object,
   title: PropTypes.string,
   navigation: PropTypes.object,
 };
+
+export default AnimeList;
