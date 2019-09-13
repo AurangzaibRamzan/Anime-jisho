@@ -4,27 +4,28 @@ import { get } from 'lodash';
 
 import { ImageWrapper } from './styles';
 
-class Image extends React.Component {
-  render() {
-    const {
-      name, source, size, height, width, ...restProps
-    } = this.props;
+const Image = ({
+  name,
+  source,
+  size,
+  height,
+  width,
+  ...restProps
+}) => {
+  if (get(source, 'uri') === null || get(source, 'uri') === '') return null;
 
-    if (get(source, 'uri') === null || get(source, 'uri') === '') return null;
-
-    return (
-      <ImageWrapper
-        source={source}
-        width={width || size}
-        resizeMethod={'auto'}
-        resizeMode={'contain'}
-        progressiveRenderingEnabled={true}
-        height={height || size}
-        {...restProps}
-      />
-    );
-  }
-}
+  return (
+    <ImageWrapper
+      source={source}
+      width={width || size}
+      resizeMethod={'auto'}
+      resizeMode={'contain'}
+      progressiveRenderingEnabled={true}
+      height={height || size}
+      {...restProps}
+    />
+  );
+};
 
 Image.propTypes = {
   name: PropTypes.string,

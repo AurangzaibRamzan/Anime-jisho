@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { debounce } from 'lodash';
@@ -14,56 +14,52 @@ import {
   IconWrapper,
 } from './styles';
 
-export default class SearchAnime extends Component {
-  state = {
-    value: '',
-  };
+const SearchAnime = ({
+  handleInputChange,
+  title,
+}) => {
+  const [value, setValue] = useState('');
 
-  handleText = (text) => {
-    const { handleInputChange } = this.props;
-    this.setState({
-      value: text,
-    });
+  const handleText = (text) => {
+    setValue(text);
     debounce(() => {
       handleInputChange(text);
     }, 500)();
   };
 
+  const backgroundImageStyle = { opacity: 0.1 };
 
-  render() {
-    const { title, handleInputChange } = this.props;
-    const { value } = this.state;
-    const backgroundImageStyle = { opacity: 0.1 };
-    return (
-      <MainScreenView>
-        <BackgroundImage
-          imageStyle={backgroundImageStyle}
-          source={require('../../../assets/images/logo.png')}
-        >
-          <LabelText>{title || 'Search Anime'}</LabelText>
-          <SearchBarWrapper>
-            <TextInputWrapper
-              value={value}
-              onChangeText={this.handleText}
-              placeholder={'Search here'}
-              placeholderTextColor='#fff'
+  return (
+    <MainScreenView>
+      <BackgroundImage
+        imageStyle={backgroundImageStyle}
+        source={require('../../../assets/images/logo.png')}
+      >
+        <LabelText>{title || 'Search Anime'}</LabelText>
+        <SearchBarWrapper>
+          <TextInputWrapper
+            value={value}
+            onChangeText={handleText}
+            placeholder={'Search here'}
+            placeholderTextColor='#fff'
+          />
+          <ButtonIcon onPress={() => handleInputChange(value)}>
+            <ButtonText>{'Otaku'}</ButtonText>
+            <IconWrapper
+              name='search'
+              color='#fff'
+              size={10}
             />
-            <ButtonIcon onPress={() => handleInputChange(value)}>
-              <ButtonText>{'Otaku'}</ButtonText>
-              <IconWrapper
-                name='search'
-                color='#fff'
-                size={10}
-              />
-            </ButtonIcon>
-          </SearchBarWrapper>
-        </BackgroundImage>
-      </MainScreenView>
-    );
-  }
-}
+          </ButtonIcon>
+        </SearchBarWrapper>
+      </BackgroundImage>
+    </MainScreenView>
+  );
+};
 
-SearchAnime.prototypes = {
+SearchAnime.propTypes = {
   handleInputChange: PropTypes.func,
   title: PropTypes.string,
 };
+
+export default SearchAnime;

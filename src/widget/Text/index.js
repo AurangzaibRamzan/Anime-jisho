@@ -10,8 +10,11 @@ import { isString } from 'lodash';
 import { Platform } from 'react-native';
 import { TextWrapperAndroid, TextWrapper } from './styles';
 
-function Text(props) {
-  const { children, textTransform, ...restProps } = props;
+const Text = ({
+  children,
+  textTransform,
+  ...restProps
+}) => {
   const TextStyling = Platform.OS === 'ios' ? TextWrapper : TextWrapperAndroid;
   let textToDisplay = children;
   if (isString(children) && !!textTransform) {
@@ -20,7 +23,7 @@ function Text(props) {
   }
 
   return <TextStyling {...restProps}>{textToDisplay}</TextStyling>;
-}
+};
 
 Text.propTypes = {
   children: PropTypes.oneOfType([

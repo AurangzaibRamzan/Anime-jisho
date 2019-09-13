@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { graphql } from 'react-apollo';
@@ -7,23 +7,21 @@ import { get } from 'lodash';
 import AnimeView from '../../components/Anime';
 import { AnimeDetails } from '../../grahql/quries.js';
 
-class Anime extends Component {
-  static navigationOptions = () => ({
-    header: null,
-  });
+const Anime = ({
+  AnimeDetails,
+  navigation,
+}) => (
+  <AnimeView
+    AnimeDetails={AnimeDetails}
+    navigation={navigation}
+  />
+);
 
+Anime.navigationOptions = {
+  header: null,
+};
 
-  render() {
-    const { AnimeDetails, navigation } = this.props;
-    return (
-      <AnimeView
-        AnimeDetails={AnimeDetails}
-        navigation={navigation} />
-    );
-  }
-}
-
-Anime.prototypes = {
+Anime.propTypes = {
   AnimeDetails: PropTypes.object,
   navigation: PropTypes.object,
 };

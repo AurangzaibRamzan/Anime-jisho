@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { graphql } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
@@ -6,21 +6,18 @@ import PropTypes from 'prop-types';
 import CharacterView from '../../components/Character';
 import { CharacterDetails } from '../../grahql/quries.js';
 
-class Character extends Component {
-  static navigationOptions = () => ({
-    header: null,
-  });
+const Character = ({
+  CharacterDetails,
+  navigation,
+}) => (
+  <CharacterView
+    CharacterDetails={CharacterDetails}
+    navigation={navigation} />
+);
 
-
-  render() {
-    const { CharacterDetails, navigation } = this.props;
-    return (
-      <CharacterView
-        CharacterDetails={CharacterDetails}
-        navigation={navigation} />
-    );
-  }
-}
+Character.navigationOptions = {
+  header: null,
+};
 
 Character.propTypes = {
   CharacterDetails: PropTypes.object,

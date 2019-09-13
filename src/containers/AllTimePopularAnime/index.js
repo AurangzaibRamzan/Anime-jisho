@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 
 import AnimeList from '../../components/AnimeList';
 import { allTimePopular } from '../../grahql/quries.js';
 
-class AllTimePopular extends Component {
-  static navigationOptions = () => ({
-    header: null,
-  });
+const AllTimePopular = ({
+  allTimePopular,
+  navigation,
+}) => (
+  <AnimeList navigation={navigation} title="All Time Popular Anime" popularAnime={allTimePopular} />
+);
 
-  render() {
-    const {
-      allTimePopular,
-      navigation,
-    } = this.props;
-    return (
-      <AnimeList navigation={navigation} title="All Time Popular Anime" popularAnime={allTimePopular} />
-    );
-  }
-}
+AllTimePopular.navigationOptions = {
+  header: null,
+};
 
-AllTimePopular.prototypes = {
+AllTimePopular.propTypes = {
   allTimePopular: PropTypes.object,
   navigation: PropTypes.object,
 };

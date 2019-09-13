@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 
 import AnimeList from '../../components/AnimeList';
 import { highestRated } from '../../grahql/quries.js';
 
-class HighestRated extends Component {
-  static navigationOptions = () => ({
-    header: null,
-  });
+const HighestRated = ({
+  highestRated,
+  navigation,
+}) => (
+  <AnimeList navigation={navigation} title="Highest Rated Anime" popularAnime={highestRated} />
+);
 
+HighestRated.navigationOptions = {
+  header: null,
+};
 
-  render() {
-    const { highestRated, navigation } = this.props;
-    return (
-      <AnimeList navigation={navigation} title="Highest Rated Anime" popularAnime={highestRated} />
-    );
-  }
-}
-
-HighestRated.prototypes = {
+HighestRated.propTypes = {
   highestRated: PropTypes.object,
   navigation: PropTypes.object,
 };
