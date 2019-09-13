@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
@@ -24,6 +25,7 @@ export default class App extends Component {
 
     this.client = new ApolloClient({
       link: new HttpLink({ uri: Api }),
+      // eslint-disable-next-line no-undef
       cache: new InMemoryCache().restore(window.__APOLLO_STATE__),
     });
   }
