@@ -16,7 +16,7 @@
     "apollo-utilities": "^1.2.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-apollo": "^2.5.2",
