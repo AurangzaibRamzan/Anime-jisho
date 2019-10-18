@@ -12,7 +12,7 @@
     "apollo-boost": "^0.3.1",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
-    "apollo-link-http": "^1.5.12",
+    "apollo-link-http": "^1.5.16",
     "apollo-utilities": "^1.2.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
