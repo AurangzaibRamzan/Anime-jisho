@@ -14,7 +14,7 @@
     "apollo-client": "^2.5.1",
     "apollo-link-http": "^1.5.16",
     "apollo-utilities": "^1.2.1",
-    "graphql": "^14.1.1",
+    "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
