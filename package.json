@@ -20,7 +20,7 @@
     "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-apollo": "^2.5.8",
-    "react-native": "0.59.8",
+    "react-native": "0.62.3",
     "react-navigation": "^2.2.0",
     "styled-components": "^4.2.1"
   },
